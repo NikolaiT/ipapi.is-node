@@ -2,7 +2,7 @@
 
 // ipapi.is for Node.js: look up an IP address, and guard() an Express or
 // Connect route against VPN, proxy, Tor and datacenter traffic.
-// API docs: https://ipapi.is/docs.html
+// API docs: https://ipapi.is/developers.html
 
 const API = 'https://api.ipapi.is/';
 const BULK_LIMIT = 100;

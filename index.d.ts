@@ -1,7 +1,7 @@
 /** What `block` can list. */
 export type Flag = 'vpn' | 'proxy' | 'tor' | 'datacenter' | 'abuser' | 'crawler' | 'mobile' | 'satellite';
 
-/** The API's answer for one address. Fields documented at https://ipapi.is/docs.html */
+/** The API's answer for one address. Fields documented at https://ipapi.is/developers.html */
 export interface IpapiResponse {
   ip: string;
   is_bogon?: boolean;

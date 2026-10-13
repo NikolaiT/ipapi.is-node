@@ -84,7 +84,7 @@ const asn = await lookup('AS15169');
 const many = await createClient().lookupMany(['1.1.1.1', '8.8.8.8', '2606:4700::1111']);
 ```
 
-All fields are described in the [API documentation](https://ipapi.is/docs.html?ref=npm).
+All fields are described in the [API documentation](https://ipapi.is/developers.html?ref=npm).
 
 ## What `block` can list
 
