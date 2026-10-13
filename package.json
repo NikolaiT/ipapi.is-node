@@ -27,10 +27,10 @@
   "homepage": "https://ipapi.is/?ref=npm",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ipapi-is/ipapi.is-node.git"
+    "url": "git+https://github.com/NikolaiT/ipapi.is-node.git"
   },
   "bugs": {
-    "url": "https://github.com/ipapi-is/ipapi.is-node/issues"
+    "url": "https://github.com/NikolaiT/ipapi.is-node/issues"
   },
   "author": "ipapi.is <info@ipapi.is> (https://ipapi.is/)",
   "license": "MIT"
