@@ -28,11 +28,14 @@ function fakeFetch(answers) {
   return { fetch, calls };
 }
 
-test('the key travels in the JSON body, never in the URL', async () => {
+test('the key travels in the JSON body, never in the URL, with the response format asked for', async () => {
   const { fetch, calls } = fakeFetch({ [VPN.ip]: VPN });
-  await createClient({ key: 'secret', fetch }).lookup(VPN.ip);
+  const client = createClient({ key: 'secret', fetch });
+  await client.lookup(VPN.ip);
   assert.equal(calls[0].url, 'https://api.ipapi.is/');
-  assert.deepEqual(calls[0].body, { q: VPN.ip, key: 'secret' });
+  assert.deepEqual(calls[0].body, { q: VPN.ip, key: 'secret', v: 1 });
+  await client.lookupMany(['8.8.8.8']);
+  assert.deepEqual(calls[1].body, { ips: ['8.8.8.8'], key: 'secret', v: 1 });
 });
 
 test('without a key no key field is sent', async () => {

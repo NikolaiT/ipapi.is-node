@@ -48,8 +48,9 @@ function createClient(options = {}) {
     const res = await fetchImpl(API, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      // The key goes in the body: a URL ends up in logs.
-      body: JSON.stringify(key ? { ...body, key } : body),
+      // The key goes in the body: a URL ends up in logs. `v: 1` asks for the
+      // response format read here, whichever one the key's account answers in.
+      body: JSON.stringify(key ? { ...body, key, v: 1 } : body),
       signal: AbortSignal.timeout(timeoutMs),
     });
     const data = await res.json().catch(() => null);
